@@ -1,8 +1,8 @@
 ### Hello ! ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧
 <ul>
 <li>Alura student</li>
-<li>Learning JavaScript</li>
 <li>ETEC student</li>
+<li>Learning java, python, HTML and CSS</li>
 </ul>
 This space is used to store and share my projects
 
