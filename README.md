@@ -2,6 +2,7 @@
 <ul>
 <li>Alura student</li>
 <li>Learning JavaScript</li>
+<p>ETEC student</p>
 </ul>
 This space is used to store and share my projects
 
