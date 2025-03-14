@@ -1,0 +1,233 @@
+--01--
+class Relogio { //classe
+  double _h1=0; //variáveis
+  double? _r;
+  
+  double get h1 => _h1; //getter
+  
+  set h1(double novoh1) => _h1 = novoh1;  //setter
+  
+  double? get r => _r;
+  
+  void minutos() { //método de conversão de horas em minutos
+  this._r = this._h1 * 60; }
+  
+  void segundos() { //método de conversão de horas em segundos
+    this._r = this._h1 * 3600; }
+}
+
+void main () {
+  var relogio = Relogio();
+  
+  relogio.h1 = 4;
+  
+  relogio.minutos();
+  print("${relogio.h1} horas equivale a ${relogio.r} minutos");
+
+  relogio.segundos();
+  print("${relogio.h1} horas equivale a ${relogio.r} segundos");
+}
+
+
+--02--
+class Idade { //classe
+  int _ano=0; //var
+  int? _r;
+  
+  int get ano => _ano; //get
+  set ano(int novoano) => _ano = novoano;  //set
+  
+  int? get r => _r;
+  
+  void nasc() { //método de calcular idade aproximada
+    this._r = 2025 - this._ano;
+  }
+ 
+}
+
+void main () {
+  var idade = Idade();
+  
+  idade.ano = 2007;
+  
+  
+  idade.nasc();
+  print("Você tem ${idade.r} anos, baseado que você nasceu no ano de ${idade.ano}");
+}
+
+
+--03--
+class Produto {
+  double prdt=0;
+  int qunt= 0;
+  double? _r;
+  
+  double get produto => prdt;
+  set produto(double _produto) => prdt = _produto; 
+  
+  int get quantidade => qunt;
+  set quantidade(int _quantidade) => qunt = _quantidade;
+  
+  double? get r => _r;
+  
+  void compra() {
+    this._r = this.prdt * this.qunt;
+  }
+ 
+}
+
+void main () {
+  var produto = Produto();
+  
+  produto.prdt = 20.99;
+  produto.qunt = 5;
+  
+  print("Valor produto: ${produto.prdt}");
+  print("Quantidade: ${produto.qunt}");
+  
+  produto.compra();
+  print("A compra tem valor de ${produto.r} reais");
+  
+}
+
+--04--
+class Salario {
+  // VALOR DA HORA --> 30
+  
+  int _hora = 0; //var horas trabalhadas
+  int _horaR = 0; //var horas faltadas (hora Reduzida)
+  int _horaE= 0;  //var horas Extras
+  int? _r;
+
+  
+  int get horas => _hora;
+  set horas(int valorhora) => _hora = valorhora; 
+  
+  int get horared => _horaR;
+  set horared(int faltas) => _horaR = faltas;
+  
+  int get horaex => _horaE;
+  set horaex(int extras) => _horaE = extras;
+  
+  int? get r => _r;
+  
+  //
+  
+  void salario() { //método de calcular o salário base
+    this._r = this._hora * 8 * 30; } //considerando valor da hora como 30
+  
+  void acrescimo() { //cálulo só do acréscimo
+    this._r = this._horaE * this._hora; }
+  
+  void reducao() { //cálculo só do desconto
+    this._r = this._horaR * this._hora; }
+  
+  void salariofinal() { //cálculo salario com descontos e acrescimos
+    this._r = (this._hora * 8 * 30) - (this._horaR * this._hora) + (this._horaE * this._hora); }
+  }
+
+void main (){
+  var recibo = Salario();
+  
+  recibo._hora = 30;
+  recibo._horaR = 1;
+  recibo._horaE = 4;
+  
+  print("Valor da hora trabalhada: ${recibo._hora}");
+  print("Horas faltadas: ${recibo._horaR}");
+  print("Horas extras: ${recibo._horaE}");
+
+
+  
+  recibo.salario();
+  print("Salário bruto: ${recibo.r}");
+  
+  recibo.acrescimo();
+  print("Acréscimo de salário: ${recibo.r}");
+  
+  recibo.reducao();
+  print("Decréscimo de salário: ${recibo.r}");
+  
+  recibo.salariofinal();
+  print("Salário final: ${recibo.r}");
+  
+  }
+
+---------------------------------------------------------------------------OUTRA LÓGICA-------------------------------------------------------------
+
+
+class Salario {
+  // VALOR DA HORA --> 30
+ 
+class Salario {
+  double _valor=0.0, _valorHora=0, _desconto=0, _acrescimo=0;
+  int _faltas=0, _extras=0;
+  
+  set valor(double novoValor) => _valor=novoValor;
+
+  
+  set faltas(int novoFaltas)=> _faltas=novoFaltas;
+  set extras(int novoExtras)=> _extras=novoExtras;
+  
+  
+  double get valor=> _valor;
+  double get valorHora => _valorHora;
+  
+  int get faltas =>_faltas;
+  int get extras =>_extras;
+  
+  void calcularValorHora(){
+    this._valorHora = this._valor/240;
+  }
+  
+  void calcularDesconto(){
+    this._desconto= this._faltas * this._valorHora;
+  }
+  
+  void calcularAcrescimo(){
+    this._acrescimo = this._extras * (this._valorHora * 1.5);
+  }
+  
+  double calcularSalarioLiquido() {
+    return (this._valor - this._desconto + this._acrescimo);
+  }
+  
+}
+
+//
+
+  void main(){
+    var salario= Salario();
+    salario.valor=5000;
+    salario.extras=120;
+    salario.faltas=120;
+    
+    salario.calcularValorHora();
+    salario.calcularDesconto();
+    salario.calcularAcrescimo();
+        
+    
+    print("Valor salário ${salario._valor.toStringAsFixed(2)}");
+    print("Valor hora ${salario._valorHora.toStringAsFixed(2)}");
+    print("Faltas ${salario._faltas}");
+    print("Extras ${salario.extras}");
+    print("Desconto ${salario._desconto.toStringAsFixed(2)}");
+    print("Acréscimo ${salario._acrescimo.toStringAsFixed(2)}");
+    
+    print("Salário líquido ${salario.calcularSalarioLiquido().toStringAsFixed(2)}");
+    
+  }
+  
+
+
+        this._valorHora= this._salario / 240;
+  }
+
+  void calcularDesconto() {
+        this._desconto = this._salario - (this._faltas * this._valorHora);
+  }
+  
+  void calcularAcrescimo() {
+        this._
+      
+  }

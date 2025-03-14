@@ -1,0 +1,57 @@
+class Pessoa {
+  ///variáveis
+  late double _peso;
+  late double _altura;
+  late double _imc;
+
+  ///getter e setter
+  double get peso => _peso;
+  set peso(double nPeso) => _peso = nPeso;
+
+  double get altura => _altura;
+  set altura(double nAltura) => _altura = nAltura;
+
+  double get imc => _imc;
+  set imc(double nImc) => _imc - nImc;
+
+  ///método calcular
+  void calcular_imc() {
+    this._imc = this._peso / (this._altura * this._altura);
+  }
+
+  ///método analisar
+  void analisar_imc() {
+    if (imc < 18.5) {
+      print("Abaixo do peso");
+    } else if (18.5 <= imc && imc < 24.9) {
+      print("Peso normal");
+    } else if (25 <= imc && imc < 29.9) {
+      print("Sobrepeso");
+    } else {
+      print("Obesidade");
+    }
+  }
+}
+
+void main() {
+  var imc = Pessoa();
+  imc._altura = 1.75;
+  imc._peso = 55;
+
+  imc.calcular_imc();
+  imc.analisar_imc();
+  
+   imc._altura = 1.40;
+  imc._peso = 55;
+
+  imc.calcular_imc();
+  imc.analisar_imc();
+  
+   imc._altura = 1.45;
+  imc._peso = 80;
+
+  imc.calcular_imc();
+  imc.analisar_imc();
+
+
+}

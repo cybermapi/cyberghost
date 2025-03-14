@@ -1,0 +1,68 @@
+class Imovel {
+  //variáveis
+  late double _largura;
+  late double _comprimento;
+  late double _area;
+
+  //setter e getter
+  double get altura => _largura;
+  set altura(double nAltura) => _largura = nAltura;
+
+  double get comprimento => _comprimento;
+  set comprimento(double nComprimento) => _comprimento = nComprimento;
+
+  double get area => _area;
+  set area(double nArea) => _area = nArea;
+
+  //método calculo área
+  void calculo_area() {
+    this._area = this._comprimento * this._largura;
+  }
+
+  void analise_iptu() {
+    if (area <= 50 && area != 0) {
+      print("500");
+    } else if (51 <= area && area < 100) {
+      print("800");
+    } else if (100 <= area && area < 200) {
+      print("1200");
+    } else if (area > 200) {
+      print("2000");
+    } else {
+      print("300");
+    }
+  }
+}
+
+void main() {
+  var iptu = Imovel();
+  iptu._largura = 0;
+  iptu._comprimento = 0;
+
+  iptu.calculo_area();
+  iptu.analise_iptu();
+
+  iptu._largura = 5;
+  iptu._comprimento = 5;
+
+  iptu.calculo_area();
+  iptu.analise_iptu();
+
+  iptu._largura = 3;
+  iptu._comprimento = 30;
+
+  iptu.calculo_area();
+  iptu.analise_iptu();
+
+  iptu._largura = 10;
+  iptu._comprimento = 10;
+
+  iptu.calculo_area();
+  iptu.analise_iptu();
+
+  iptu._largura = 30;
+  iptu._comprimento = 30;
+
+  iptu.calculo_area();
+  iptu.analise_iptu();
+}

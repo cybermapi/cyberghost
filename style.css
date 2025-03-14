@@ -1,0 +1,55 @@
+*{ /*resetando as config*/
+    text-decoration: none;
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+
+:root {
+    --cor-escura: rgb(24,44,37);
+}
+
+body{
+    background-color: #f2f2f2;
+}
+
+
+/*BANNER */
+.banner {
+    background-color: var(--cor-escura);
+    height: 50px;
+  
+
+}
+.me {
+    color: white;
+}
+
+
+/*CABEÇALHO */
+.cabecalho {
+    margin: 10px; /*Espaçamento */
+
+}
+
+.cabecalho_links {
+    display: flex; /*Coloca os links em fileira*/
+    justify-content: space-between; /*Puxa os links pra direita*/
+    border: 2px solid black; /*Cria a borda*/
+    border-radius: 20px; 
+    padding: 0 30px; /*Cria o espaçamento do link da "parede"*/
+    background-color: chocolate; /*cor do fundo*/
+
+}
+
+.cabecalho_item {
+    display: flex;
+}
+
+
+.cabecalho_links li {
+    margin: 10px; /*Margem das bordas dos links */
+}
+
+/*MAIN */
+

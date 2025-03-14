@@ -1,0 +1,14 @@
+https://coolors.co/0c0a3e-7b1e7a-b33f62-f9564f-f3c677
+
+https://coolors.co/f46036-2e294e-1b998b-e71d36-c5d86d
+
+#2c4c3b	(44,76,59) verde pantano
+#306844	(48,104,68) verde sapatão
+#182c25	(24,44,37) verde escuro
+#455b55	(69,91,85) cinza médio
+#1e453e	(30,69,62) verde azulado escuro
+#cbded3 azul claro acinzentado
+#8ba49a azul acinzentado
+#d2c49e amarelo cor de nada
+#3b6255 verde musgo
+#e2dfda lavanda
