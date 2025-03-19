@@ -5,12 +5,37 @@
     list-style: none;
 }
 
+
+/*FONTS*/
+
+.outfit-text {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+.bodoni-moda-title {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+
+
+/* CORES */
+
 :root {
     --cor-escura: rgb(24,44,37);
+    --verde-base: #306844;
+    --cor-amarelo: #d2c49e;
+
+
 }
 
 body{
-    background-color: #f2f2f2;
+    background-color: var(--cor-escura);
 }
 
 
@@ -18,7 +43,7 @@ body{
 .banner {
     background-color: var(--cor-escura);
     height: 50px;
-  
+    text-align: center;
 
 }
 .me {
@@ -28,24 +53,26 @@ body{
 
 /*CABEÇALHO */
 .cabecalho {
-    margin: 10px; /*Espaçamento */
-
+    /* margin: 10px; Espaçamento */
+    position: sticky;
+    top: 24px;
+    width: 80%;
+    justify-content: center;
+    margin-left: 10%;
 }
 
 .cabecalho_links {
     display: flex; /*Coloca os links em fileira*/
     justify-content: space-between; /*Puxa os links pra direita*/
-    border: 2px solid black; /*Cria a borda*/
+    border: 2px solid var(--cor-escura); /*Cria a borda*/
     border-radius: 20px; 
     padding: 0 30px; /*Cria o espaçamento do link da "parede"*/
-    background-color: chocolate; /*cor do fundo*/
-
+    background-color: #d2c49e; /*cor do fundo*/
 }
 
 .cabecalho_item {
     display: flex;
 }
-
 
 .cabecalho_links li {
     margin: 10px; /*Margem das bordas dos links */
@@ -53,3 +80,58 @@ body{
 
 /*MAIN */
 
+.main{
+
+    column-count: 2;
+    column-width: 70%;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+
+
+    background: rgb(40,70,54);
+    background: linear-gradient(103deg, rgba(40,70,54,1) 31%, rgba(58,131,84,1) 100%);
+}
+
+.img_me {
+    border-radius: 50%;
+    margin: 30px;
+}
+
+.titulo {
+    font-size: larger;
+    font-family: "Bodoni Moda", serif;
+    font-size: 70px;
+    color: white;
+}
+
+.sobre_me {
+    font-family: "Outfit", sans-serif;
+    color: white;
+}
+
+.texto_main {
+    margin: 130px;
+}
+
+/* SOBRE MIM */
+
+.subtitulo {
+    font-size: medium;
+    font-family: "Bodoni Moda", serif;
+    font-size: 40px;
+    color: white;
+}
+
+.sobre {
+    background-color: #306844;
+    padding: 40px;
+
+    height: 100vh;
+    column-count: 2;
+    column-width: 60%;
+    column-gap: 30px;
+
+}
